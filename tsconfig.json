@@ -27,6 +27,7 @@
 			"@context/*": ["./src/context/*"],
 			"@models/*": ["./src/models/*"],
 			"@validations/*": ["./src/validations/*"],
+			"@constants/*": ["./src/constants/*"],
 			"@/*": ["./src/*"]
 		}
 	},
