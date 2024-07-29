@@ -18,7 +18,7 @@ const handleReturnedServerError = (e: Error) => {
 	return 'An error occurred. Please try again later.';
 };
 
-export const action = createSafeActionClient({
+export const unAuthAction = createSafeActionClient({
 	handleReturnedServerError,
 });
 

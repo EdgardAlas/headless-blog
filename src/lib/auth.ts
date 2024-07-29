@@ -5,6 +5,7 @@ import { UserModel } from '@models/user.model';
 import { loginValidations } from '@/app/(auth)/validations';
 import NextAuth from 'next-auth';
 import credentials from 'next-auth/providers/credentials';
+import { connectDB } from '@lib/db';
 
 export const {
 	handlers,
@@ -21,6 +22,8 @@ export const {
 				password: {},
 			},
 			authorize: async (credentials) => {
+				await connectDB();
+
 				const { email, password } =
 					await loginValidations.parseAsync(credentials);
 
