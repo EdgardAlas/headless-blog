@@ -9,11 +9,12 @@ import {
 	User2,
 	Users,
 } from 'lucide-react';
+import { ElementType } from 'react';
 
 export interface MenuItem {
 	title: string;
 	link?: string;
-	icon?: React.ComponentType;
+	icon?: ElementType;
 	items?: MenuItem[];
 	roles: Role[];
 }
