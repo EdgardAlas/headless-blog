@@ -21,7 +21,8 @@ type FormInputProps<T, E extends React.ElementType = typeof Input> = {
 		message?: string;
 	};
 	label?: string;
-	description?: string;
+	description?: React.ReactNode;
+	isRequired?: boolean;
 } & Omit<React.ComponentProps<E>, 'name'>;
 
 /**
@@ -61,14 +62,17 @@ export const FormInput = <T, E extends React.ElementType>({
 			render={({ field }) => (
 				<FormItem className={cn('space-y-1', classNames?.container)}>
 					<Label htmlFor={inputId as string} className={classNames?.label}>
-						{label} {rest.required && <span className='text-red-500'>*</span>}
+						{label}{' '}
+						{(rest.required || rest.isRequired) && (
+							<span className='text-red-500'>*</span>
+						)}
 					</Label>
 					<FormControl>
 						<Component
 							id={inputId}
 							{...field}
-							{...rest}
 							{...form.register(name as string)}
+							{...rest}
 							error={error}
 							className={cn(className, {
 								'border-red-500 focus-visible:ring-1 focus-visible:ring-red-500':

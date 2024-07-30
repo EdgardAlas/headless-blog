@@ -21,10 +21,10 @@ export const createUserValidation = z.object({
 			message: 'Password must be at most 255 characters',
 		}),
 	role: z
-		.enum(['admin', 'editor'], {
+		.enum(['admin', 'user'], {
 			message: 'Invalid role',
 		})
-		.default('editor'),
+		.default('user'),
 	image: z.any().optional(),
 });
 
@@ -41,7 +41,7 @@ export const updateUserValidation = z
 		email: z.string().email({
 			message: 'Invalid email',
 		}),
-		role: z.enum(['admin', 'editor'], {
+		role: z.enum(['admin', 'user'], {
 			message: 'Invalid role',
 		}),
 		password: z.string().optional(),
