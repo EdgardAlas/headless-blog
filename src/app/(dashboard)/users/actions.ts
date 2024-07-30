@@ -10,7 +10,7 @@ import {
 import {
 	createUserValidation,
 	updateUserValidation,
-} from '@/app/(dashboard)/users/validaitions';
+} from '@/app/(dashboard)/users/validations';
 import { Role } from '@/constants/roles';
 import { CustomError } from '@/helpers/custom-error';
 import { idValidation } from '@/validations/id.validations';

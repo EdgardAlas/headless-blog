@@ -45,9 +45,7 @@ export const updateUserValidation = z
 			message: 'Invalid role',
 		}),
 		password: z.string().optional(),
-		id: z.string().uuid({
-			message: 'Invalid id',
-		}),
+		id: z.string(),
 		image: z.any().optional(),
 	})
 	.superRefine((data, cx) => {

@@ -61,6 +61,9 @@ export const CrudForm = <T extends Record<string, any>>({
 							<AutoForm
 								key={data?.key}
 								className='mt-4'
+								onValidationErrors={() => {
+									toast.error('Please fill all required fields');
+								}}
 								onSubmit={async (values) => {
 									const data = await confirm({
 										title: 'Are you sure?',

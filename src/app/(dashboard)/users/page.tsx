@@ -1,6 +1,6 @@
 import { UsersTableColumns } from '@/app/(dashboard)/users/_containers/users-columns';
 import { getUsersPaginated } from '@/app/(dashboard)/users/dao';
-import { GeneralUserValidation } from '@/app/(dashboard)/users/validaitions';
+import { GeneralUserValidation } from '@/app/(dashboard)/users/validations';
 import { validateRole } from '@/helpers/validate-role';
 import { CrudUi } from '@components/crud/crud-ui';
 

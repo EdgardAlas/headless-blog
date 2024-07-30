@@ -7,7 +7,7 @@ import {
 import {
 	createUserValidation,
 	updateUserValidation,
-} from '@/app/(dashboard)/users/validaitions';
+} from '@/app/(dashboard)/users/validations';
 
 export const validatiodCrudMap = {
 	users: {
