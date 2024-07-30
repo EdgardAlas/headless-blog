@@ -72,7 +72,7 @@ export const getUsersPaginated =
 				],
 			},
 			{
-				page: page - 1,
+				page: page,
 				limit: size,
 				sort: {
 					updatedAt: -1,
