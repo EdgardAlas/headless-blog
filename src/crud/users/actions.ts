@@ -6,11 +6,11 @@ import {
 	findUserById,
 	insertUser,
 	updateUser,
-} from '@/app/(dashboard)/users/dao';
+} from '@/crud/users/dao';
 import {
 	createUserValidation,
 	updateUserValidation,
-} from '@/app/(dashboard)/users/validations';
+} from '@/crud/users/validations';
 import { Role } from '@/constants/roles';
 import { CustomError } from '@/helpers/custom-error';
 import { idValidation } from '@/validations/id.validations';

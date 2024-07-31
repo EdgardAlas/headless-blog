@@ -12,6 +12,7 @@ export const currentUser = cache(
 				blocked: boolean;
 				role: Role;
 				image: string;
+				name: string;
 		  }
 		| undefined
 	> => {
@@ -39,6 +40,7 @@ export const currentUser = cache(
 			blocked: foundUser.blocked,
 			role: foundUser.role as Role,
 			image: foundUser.image,
+			name: foundUser.name,
 		};
 	}
 );

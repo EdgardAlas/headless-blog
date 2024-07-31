@@ -14,8 +14,8 @@ import {
 import { useModal } from '@context/use-modal';
 import { EditIcon, PlusIcon } from 'lucide-react';
 import { toast } from 'sonner';
-import { validatiodCrudMap, ValidationCrudMap } from '@helpers/validations-map';
 import { handleSafeActionError } from '@lib/handle-safe-action-error';
+import { validatiodCrudMap, ValidationCrudMap } from '@/crud/validations-map';
 
 export interface CrudFormProps<T extends Record<string, any>> {
 	fieldConfig?: Partial<FieldConfig<NoInfer<T>>>;
