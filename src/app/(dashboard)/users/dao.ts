@@ -87,9 +87,9 @@ export const getUsersPaginated =
 export const mapUserResponseToUserRowArray = async (
 	users: PaginateResult<UserDocument>
 ) => {
-	const user = await currentUser();
+	const loggedUser = await currentUser();
 
-	if (!user) {
+	if (!loggedUser) {
 		return {
 			data: [],
 			page: 1,
@@ -106,7 +106,7 @@ export const mapUserResponseToUserRowArray = async (
 			role: user.role,
 			image: user.image,
 			updatedAt: formatDate(user.updatedAt).format('LLL'),
-			canBeDeleted: user.id.toString() !== user.id.toString(),
+			canBeDeleted: loggedUser.id.toString() !== user.id.toString(),
 			blocked: user.blocked,
 		};
 	});
