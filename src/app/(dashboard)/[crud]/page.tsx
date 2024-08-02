@@ -1,4 +1,5 @@
-import { crudMap } from '@/crud/crud-map';
+import { crudPages } from '@/crud';
+import { CrudValidationKeys } from '@/crud/crud-validations';
 import { validateRole } from '@/helpers/validate-role';
 import { CrudUi } from '@components/crud/crud-ui';
 import { notFound } from 'next/navigation';
@@ -16,7 +17,7 @@ const GeneralCrudPage = async ({
 	searchParams,
 	params: { crud },
 }: GeneralCrudProps) => {
-	const selectedCrud = crudMap[crud];
+	const selectedCrud = crudPages[crud];
 
 	if (!selectedCrud) {
 		notFound();
@@ -35,7 +36,7 @@ const GeneralCrudPage = async ({
 				Number(size) || 7
 			)}
 			fieldConfig={selectedCrud.fieldConfig}
-			crud={crud}
+			crud={crud as CrudValidationKeys}
 			searchParams={searchParams}
 		/>
 	);

@@ -8,7 +8,7 @@ import {
 	DropdownMenuTrigger,
 } from '@components/ui/dropdown-menu';
 import { useModal } from '@context/use-modal';
-import { validatiodCrudMap, ValidationCrudMap } from '@/crud/validations-map';
+import { crudValidations, CrudValidationKeys } from '@/crud/crud-validations';
 import { handleSafeActionError } from '@lib/handle-safe-action-error';
 import { Edit2Icon, EllipsisVertical, Trash2Icon } from 'lucide-react';
 import { toast } from 'sonner';
@@ -20,7 +20,7 @@ interface CrudActionsProps {
 
 	noEdit?: boolean;
 	noDelete?: boolean;
-	crud: ValidationCrudMap;
+	crud: CrudValidationKeys;
 }
 
 export const CrudActions = ({
@@ -34,7 +34,7 @@ export const CrudActions = ({
 	const modal = useModal();
 	const confirm = useConfirm();
 
-	const validations = validatiodCrudMap[crud];
+	const validations = crudValidations[crud];
 
 	return (
 		<DropdownMenu>

@@ -5,7 +5,6 @@ import {
 	Key,
 	List,
 	Settings,
-	Tag,
 	User2,
 	Users,
 } from 'lucide-react';
@@ -60,7 +59,6 @@ export const menu: MenuItem[] = [
 				link: '/authors',
 				roles: ['user'],
 			},
-			{ title: 'Tags', icon: Tag, link: '/tags', roles: ['user'] },
 		],
 	},
 	{
