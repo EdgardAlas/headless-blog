@@ -1,8 +1,16 @@
 import { crudPages } from '@/crud';
-import { CrudValidationKeys } from '@/crud/crud-validations';
+import { CrudValidationKeys } from '@/crud/crud-modals';
 import { validateRole } from '@/helpers/validate-role';
 import { CrudUi } from '@components/crud/crud-ui';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({
+	params,
+}: GeneralCrudProps): Promise<Metadata> {
+	const selectedCrud = crudPages[params.crud];
+	return selectedCrud.seo;
+}
 
 interface GeneralCrudProps {
 	searchParams: {

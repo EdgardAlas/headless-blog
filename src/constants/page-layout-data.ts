@@ -11,6 +11,12 @@ export const pageLayoutData: PageMetadata = {
 	'/users': {
 		title: 'Users management',
 	},
+	'/categories': {
+		title: 'Categories management',
+	},
+	'/authors': {
+		title: 'Authors management',
+	},
 	'/posts': {
 		title: 'Posts management',
 	},
@@ -18,3 +24,4 @@ export const pageLayoutData: PageMetadata = {
 		title: 'Logs reports',
 	},
 };
+

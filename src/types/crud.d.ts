@@ -1,6 +1,7 @@
 import { FieldConfigItem } from '@components/auto-form/types';
 import { Role } from '@constants/roles';
 import { ColumnDef } from '@tanstack/react-table';
+import { Metadata } from 'next';
 
 export interface CrudFormInfo {
 	create: {
@@ -30,6 +31,7 @@ export interface CrudConfiguration {
 		size: number
 	) => () => Promise<WithPagination<any[]>>;
 	fieldConfig?: Record<string, FieldConfigItem>;
+	seo: Metadata;
 }
 
 export interface CrudMap {

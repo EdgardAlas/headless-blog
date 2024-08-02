@@ -8,7 +8,7 @@ import {
 	DropdownMenuTrigger,
 } from '@components/ui/dropdown-menu';
 import { useModal } from '@context/use-modal';
-import { crudValidations, CrudValidationKeys } from '@/crud/crud-validations';
+import { crudValidations, CrudValidationKeys } from '@/crud/crud-modals';
 import { handleSafeActionError } from '@lib/handle-safe-action-error';
 import { Edit2Icon, EllipsisVertical, Trash2Icon } from 'lucide-react';
 import { toast } from 'sonner';

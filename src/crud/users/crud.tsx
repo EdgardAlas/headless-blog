@@ -1,7 +1,8 @@
-import { UsersTableColumns } from '@/crud/users/_containers/users-columns';
+import { UsersTableColumns } from '@/crud/users/_containers/columns';
 import { getUsersPaginated } from '@/crud/users/dao';
-import { crudValidations } from '@/crud/crud-validations';
+import { crudValidations } from '@/crud/crud-modals';
 import { CrudConfiguration } from '@/types/crud';
+import { ImageSizeLimit } from '@components/ui/image-size-limit';
 
 export const userCrud: CrudConfiguration = {
 	roles: ['admin'],
@@ -14,13 +15,11 @@ export const userCrud: CrudConfiguration = {
 		},
 		image: {
 			fieldType: 'file',
-			description: (
-				<>
-					<span className='text-xs text-gray-500'>
-						Image should not be more than 5MB
-					</span>
-				</>
-			),
+			description: <ImageSizeLimit />,
 		},
+	},
+	seo: {
+		title: 'Users',
+		description: 'Manage users',
 	},
 };
