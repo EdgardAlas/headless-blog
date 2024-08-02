@@ -15,10 +15,12 @@ export interface CrudFormInfo {
 	delete: {
 		title: string;
 	};
-	deleteAction: AnyFunction;
-	createAction: AnyFunction;
-	updateAction: AnyFunction;
-	getAction: AnyFunction;
+	deleteAction?: AnyFunction;
+	createAction?: AnyFunction;
+	updateAction?: AnyFunction;
+	getAction?: AnyFunction;
+	noEdit?: boolean;
+	noDelete?: boolean;
 }
 
 export interface CrudConfiguration {

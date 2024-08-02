@@ -42,9 +42,13 @@ export const CrudActions = ({
 				<EllipsisVertical />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent>
-				{!noEdit && (
+				{!(noEdit || validations.noEdit) && (
 					<DropdownMenuItem
 						onClick={async () => {
+							if (!validations.getAction) {
+								return;
+							}
+
 							const toastId = toast.loading('Loading...');
 
 							const data = await validations.getAction({
@@ -66,9 +70,13 @@ export const CrudActions = ({
 					</DropdownMenuItem>
 				)}
 
-				{!noDelete && canBeDeleted && (
+				{!(noDelete || validations.noDelete) && canBeDeleted && (
 					<DropdownMenuItem
 						onClick={async () => {
+							if (!validations.deleteAction) {
+								return;
+							}
+
 							const confirmation = await confirm({
 								title: 'Are you sure?',
 								actionButton: 'Yes',
