@@ -6,32 +6,32 @@ import { Metadata } from 'next';
 export interface CrudFormInfo {
 	create: {
 		title: string;
-		validation: any;
+		validation: TODO;
 	};
 	update: {
 		title: string;
-		validation: any;
+		validation: TODO;
 	};
 	delete: {
 		title: string;
 	};
-	deleteAction?: AnyFunction;
-	createAction?: AnyFunction;
-	updateAction?: AnyFunction;
-	getAction?: AnyFunction;
+	deleteAction?: TODOFunction;
+	createAction?: TODOFunction;
+	updateAction?: TODOFunction;
+	getAction?: TODOFunction;
 	noEdit?: boolean;
 	noDelete?: boolean;
 }
 
 export interface CrudConfiguration {
-	columns: ColumnDef<any, unknow>[];
+	columns: ColumnDef<TODO, unknow>[];
 	roles: Role[];
 	crud: CrudFormInfo;
 	getData: (
 		query: string,
 		page: number,
 		size: number
-	) => () => Promise<WithPagination<any[]>>;
+	) => () => Promise<WithPagination<TODO[]>>;
 	fieldConfig?: Record<string, FieldConfigItem>;
 	seo: Metadata;
 }

@@ -1,1 +1,1 @@
-type AnyFunction = (...args: any[]) => any;
+type AnyFunction = (...args: TODO[]) => TODO;

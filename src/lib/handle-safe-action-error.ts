@@ -4,7 +4,7 @@ import { toast } from 'sonner';
 export const handleSafeActionError = (
 	id: string | number,
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	response: SafeActionResult<any, any, any> | undefined,
+	response: SafeActionResult<TODO, any, TODO> | undefined,
 	errorMessage?: string
 ) => {
 	if (response?.serverError) {

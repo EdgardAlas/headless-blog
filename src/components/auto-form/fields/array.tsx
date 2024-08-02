@@ -12,14 +12,14 @@ import { beautifyObjectName } from '../utils';
 import AutoFormObject from './object';
 
 function isZodArray(
-	item: z.ZodArray<any> | z.ZodDefault<any>
-): item is z.ZodArray<any> {
+	item: z.ZodArray<TODO> | z.ZodDefault<TODO>
+): item is z.ZodArray<TODO> {
 	return item instanceof z.ZodArray;
 }
 
 function isZodDefault(
-	item: z.ZodArray<any> | z.ZodDefault<any>
-): item is z.ZodDefault<any> {
+	item: z.ZodArray<TODO> | z.ZodDefault<TODO>
+): item is z.ZodDefault<TODO> {
 	return item instanceof z.ZodDefault;
 }
 
@@ -31,10 +31,10 @@ export default function AutoFormArray({
 	fieldConfig,
 }: {
 	name: string;
-	item: z.ZodArray<any> | z.ZodDefault<any>;
+	item: z.ZodArray<TODO> | z.ZodDefault<TODO>;
 	form: ReturnType<typeof useForm>;
 	path?: string[];
-	fieldConfig?: any;
+	fieldConfig?: TODO;
 }) {
 	const { fields, append, remove } = useFieldArray({
 		control: form.control,
@@ -57,7 +57,7 @@ export default function AutoFormArray({
 					return (
 						<div className='mt-4 flex flex-col' key={`${key}`}>
 							<AutoFormObject
-								schema={itemDefType as z.ZodObject<any, any>}
+								schema={itemDefType as z.ZodObject<TODO, TODO>}
 								form={form}
 								fieldConfig={fieldConfig}
 								path={[...path, index.toString()]}

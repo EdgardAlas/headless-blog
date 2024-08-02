@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function AutoFormTooltip({ fieldConfigItem }: { fieldConfigItem: any }) {
+function AutoFormTooltip({ fieldConfigItem }: { fieldConfigItem: TODO }) {
 	return (
 		<>
 			{fieldConfigItem?.description && (

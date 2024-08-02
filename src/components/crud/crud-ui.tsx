@@ -5,14 +5,14 @@ import { TableLoading } from '@components/ui/table-loading';
 import { Suspense } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-interface CrudUiProps<T extends Record<string, any>>
+interface CrudUiProps<T extends Record<string, TODO>>
 	extends CrudFormProps<NoInfer<T>>,
-		CrudTableProps<any, unknown> {
+		CrudTableProps<TODO, unknown> {
 	searchParams: { [key: string]: string };
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const CrudUi = <T extends Record<string, any>>({
+export const CrudUi = <T extends Record<string, TODO>>({
 	columns,
 	data: promise,
 	fieldConfig,

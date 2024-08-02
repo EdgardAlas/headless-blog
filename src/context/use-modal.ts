@@ -3,10 +3,10 @@ import { create } from 'zustand';
 interface ModalContextProps {
 	isOpen: boolean;
 
-	open: (_data?: any) => void;
+	open: (_data?: TODO) => void;
 	close: () => void;
-	data: any;
-	setData: (_data: any) => void;
+	data: TODO;
+	setData: (_data: TODO) => void;
 	clearData: () => void;
 }
 

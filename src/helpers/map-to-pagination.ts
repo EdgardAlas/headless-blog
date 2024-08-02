@@ -5,7 +5,7 @@ import { PaginateResult } from 'mongoose';
 export const mapToPagination = async <T>(
 	data: PaginateResult<unknown>,
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	mapper: (...args: any[]) => any
+	mapper: (...args: TODO[]) => any
 ) => {
 	const user = await currentUser();
 

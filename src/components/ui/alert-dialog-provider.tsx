@@ -95,7 +95,7 @@ export function AlertDialogProvider({
 		actionButton: 'Okay',
 	});
 
-	const resolveRef = React.useRef<(_tf: any) => void>();
+	const resolveRef = React.useRef<(_tf: TODO) => void>();
 
 	function close() {
 		dispatch({ type: 'close' });

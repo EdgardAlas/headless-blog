@@ -16,7 +16,7 @@ export const GenerateForm = <SchemaType extends ZodObjectOrWrapped>({
 	values?: Partial<z.infer<SchemaType>>;
 	fieldConfig?: FieldConfig<z.infer<SchemaType>>;
 	dependencies?: Dependency<z.infer<SchemaType>>[];
-	form: ReturnType<any>;
+	form: ReturnType<TODO>;
 }) => {
 	const objectFormSchema = getObjectFormSchema(formSchema);
 	return (
@@ -28,4 +28,3 @@ export const GenerateForm = <SchemaType extends ZodObjectOrWrapped>({
 		/>
 	);
 };
-

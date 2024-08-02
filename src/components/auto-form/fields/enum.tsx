@@ -18,7 +18,7 @@ export default function AutoFormEnum({
 	zodItem,
 	fieldProps,
 }: AutoFormInputComponentProps) {
-	const baseValues = (getBaseSchema(zodItem) as unknown as z.ZodEnum<any>)._def
+	const baseValues = (getBaseSchema(zodItem) as unknown as z.ZodEnum<TODO>)._def
 		.values;
 
 	let values: [string, string][] = [];
@@ -28,7 +28,7 @@ export default function AutoFormEnum({
 		values = baseValues.map((value) => [value, value]);
 	}
 
-	function findItem(value: any) {
+	function findItem(value: TODO) {
 		return values.find((item) => item[0] === value);
 	}
 

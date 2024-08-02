@@ -23,7 +23,7 @@ function DefaultParent({ children }: { children: React.ReactNode }) {
 }
 
 export default function AutoFormObject<
-	SchemaType extends z.ZodObject<any, any>,
+	SchemaType extends z.ZodObject<TODO, TODO>,
 >({
 	schema,
 	form,
@@ -49,14 +49,14 @@ export default function AutoFormObject<
 	}
 
 	const handleIfZodNumber = (item: z.ZodAny) => {
-		const isZodNumber = (item as any)._def.typeName === 'ZodNumber';
+		const isZodNumber = (item as TODO)._def.typeName === 'ZodNumber';
 		const isInnerZodNumber =
-			(item._def as any).innerType?._def?.typeName === 'ZodNumber';
+			(item._def as TODO).innerType?._def?.typeName === 'ZodNumber';
 
 		if (isZodNumber) {
-			(item as any)._def.coerce = true;
+			(item as TODO)._def.coerce = true;
 		} else if (isInnerZodNumber) {
-			(item._def as any).innerType._def.coerce = true;
+			(item._def as TODO).innerType._def.coerce = true;
 		}
 
 		return item;
@@ -89,7 +89,7 @@ export default function AutoFormObject<
 							<AccordionTrigger>{itemName}</AccordionTrigger>
 							<AccordionContent className='p-2'>
 								<AutoFormObject
-									schema={item as unknown as z.ZodObject<any, any>}
+									schema={item as unknown as z.ZodObject<TODO, TODO>}
 									form={form}
 									fieldConfig={
 										(fieldConfig?.[name] ?? {}) as FieldConfig<
@@ -107,7 +107,7 @@ export default function AutoFormObject<
 						<AutoFormArray
 							key={key}
 							name={name}
-							item={item as unknown as z.ZodArray<any>}
+							item={item as unknown as z.ZodArray<TODO>}
 							form={form}
 							fieldConfig={fieldConfig?.[name] ?? {}}
 							path={[...path, name]}

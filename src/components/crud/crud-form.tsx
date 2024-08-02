@@ -17,12 +17,12 @@ import { toast } from 'sonner';
 import { handleSafeActionError } from '@lib/handle-safe-action-error';
 import { crudValidations, CrudValidationKeys } from '@/crud/crud-modals';
 
-export interface CrudFormProps<T extends Record<string, any>> {
+export interface CrudFormProps<T extends Record<string, TODO>> {
 	fieldConfig?: Partial<FieldConfig<NoInfer<T>>>;
 	crud: CrudValidationKeys;
 }
 
-export const CrudForm = <T extends Record<string, any>>({
+export const CrudForm = <T extends Record<string, TODO>>({
 	fieldConfig,
 	crud,
 }: CrudFormProps<T>) => {
@@ -124,7 +124,7 @@ export const CrudForm = <T extends Record<string, any>>({
 
 									close();
 								}}
-								formSchema={validations[formType].validation as any}
+								formSchema={validations[formType].validation as TODO}
 								fieldConfig={{
 									id: {
 										hidden: true,
