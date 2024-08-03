@@ -4,12 +4,17 @@ import paginate from 'mongoose-paginate-v2';
 export interface ApiKeyDocument {
 	id: ObjectId;
 	apiKey: string;
-	expiredAt: Date;
-	updateAt: Date;
+	expiredAt?: Date | string | null;
+	updatedAt: Date;
+	name: string;
 }
 
-const ApiKeySchema = new mongoose.Schema<ApiKeyDocument>(
+export const Schema = new mongoose.Schema<ApiKeyDocument>(
 	{
+		name: {
+			type: String,
+			required: true,
+		},
 		apiKey: {
 			type: String,
 			required: true,
@@ -17,7 +22,7 @@ const ApiKeySchema = new mongoose.Schema<ApiKeyDocument>(
 		},
 		expiredAt: {
 			type: Date,
-			required: true,
+			required: false,
 		},
 	},
 	{
@@ -25,11 +30,13 @@ const ApiKeySchema = new mongoose.Schema<ApiKeyDocument>(
 	}
 );
 
-ApiKeySchema.plugin(paginate);
+Schema.plugin(paginate);
 
-export const ApikeyModel =
+export const ApiKeyModel =
 	(mongoose.models.ApiKey as mongoose.PaginateModel<ApiKeyDocument>) ||
 	mongoose.model<ApiKeyDocument, mongoose.PaginateModel<ApiKeyDocument>>(
 		'ApiKey',
-		ApiKeySchema
+		Schema
 	);
+
+Schema.obj;

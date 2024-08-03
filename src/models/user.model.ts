@@ -14,7 +14,7 @@ export interface UserDocument {
 	updatedAt: Date;
 }
 
-const UserSchema = new mongoose.Schema<UserDocument>(
+export const Schema = new mongoose.Schema<UserDocument>(
 	{
 		email: {
 			type: String,
@@ -53,11 +53,11 @@ const UserSchema = new mongoose.Schema<UserDocument>(
 	}
 );
 
-UserSchema.plugin(paginate);
+Schema.plugin(paginate);
 
 export const UserModel =
 	(mongoose.models.User as mongoose.PaginateModel<UserDocument>) ||
 	mongoose.model<UserDocument, mongoose.PaginateModel<UserDocument>>(
 		'User',
-		UserSchema
+		Schema
 	);

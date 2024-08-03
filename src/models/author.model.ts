@@ -9,7 +9,7 @@ export interface AuthorDocument {
 	createAt: Date;
 }
 
-const AuthorSchema = new mongoose.Schema<AuthorDocument>(
+export const Schema = new mongoose.Schema<AuthorDocument>(
 	{
 		name: {
 			type: String,
@@ -29,11 +29,11 @@ const AuthorSchema = new mongoose.Schema<AuthorDocument>(
 	}
 );
 
-AuthorSchema.plugin(paginate);
+Schema.plugin(paginate);
 
 export const AuthorModel =
 	(mongoose.models.Author as mongoose.PaginateModel<AuthorDocument>) ||
 	mongoose.model<AuthorDocument, mongoose.PaginateModel<AuthorDocument>>(
 		'Author',
-		AuthorSchema
+		Schema
 	);

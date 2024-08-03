@@ -8,7 +8,12 @@ import { notFound } from 'next/navigation';
 export async function generateMetadata({
 	params,
 }: GeneralCrudProps): Promise<Metadata> {
-	const selectedCrud = crudPages[params.crud];
+	const selectedCrud = crudPages[params.crud as CrudValidationKeys];
+
+	if (!selectedCrud) {
+		return notFound();
+	}
+
 	return selectedCrud.seo;
 }
 
@@ -25,7 +30,7 @@ const GeneralCrudPage = async ({
 	searchParams,
 	params: { crud },
 }: GeneralCrudProps) => {
-	const selectedCrud = crudPages[crud];
+	const selectedCrud = crudPages[crud as CrudValidationKeys];
 
 	if (!selectedCrud) {
 		notFound();

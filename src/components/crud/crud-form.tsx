@@ -79,13 +79,14 @@ export const CrudForm = <T extends Record<string, TODO>>({
 									const toastId = toast.loading('Loading...');
 
 									if (!values?.id) {
-										if (!validations.createAction) {
+										if (!validations.create.createAction) {
 											toast.error('Create action not found', { id: toastId });
 											return;
 										}
 
 										try {
-											const data = await validations.createAction(values);
+											const data =
+												await validations.create.createAction(values);
 
 											if (handleSafeActionError(toastId, data)) {
 												return;
@@ -104,12 +105,12 @@ export const CrudForm = <T extends Record<string, TODO>>({
 									}
 
 									try {
-										if (!validations.updateAction) {
+										if (!validations.update.updateAction) {
 											toast.error('Update action not found', { id: toastId });
 											return;
 										}
 
-										const data = await validations.updateAction(values);
+										const data = await validations.update.updateAction(values);
 
 										if (handleSafeActionError(toastId, data)) {
 											return;

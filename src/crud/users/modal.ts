@@ -6,16 +6,19 @@ export const usersModalCrudModalInfo: CrudFormInfo = {
 	create: {
 		title: 'Create User',
 		validation: usersValidations.createUserValidation,
+		createAction: usersActions.createUserAction,
 	},
 	update: {
 		title: 'Update User',
 		validation: usersValidations.updateUserValidation,
+		updateAction: usersActions.updateUserAction,
 	},
 	delete: {
 		title: 'Delete User',
+		deleteAction: usersActions.deleteUserAction,
 	},
-	deleteAction: usersActions.deleteUserAction,
-	createAction: usersActions.createUserAction,
-	updateAction: usersActions.updateUserAction,
-	getAction: usersActions.getUserByIdAction,
+
+	get: {
+		getAction: usersActions.getUserByIdAction,
+	},
 };

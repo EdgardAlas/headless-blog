@@ -6,16 +6,18 @@ export const categoriesCrudModalInfo: CrudFormInfo = {
 	create: {
 		title: 'Create Category',
 		validation: categoriesValidations.createCategoryValidation,
+		createAction: categoriesActions.createCategoryAction,
 	},
 	update: {
 		title: 'Update Category',
 		validation: categoriesValidations.updateCategoryValidation,
+		updateAction: categoriesActions.updateCategoryAction,
 	},
 	delete: {
 		title: 'Delete Category',
+		deleteAction: categoriesActions.deleteCategoryAction,
 	},
-	deleteAction: categoriesActions.deleteCategoryAction,
-	createAction: categoriesActions.createCategoryAction,
-	updateAction: categoriesActions.updateCategoryAction,
-	getAction: categoriesActions.getCategoryByIdAction,
+	get: {
+		getAction: categoriesActions.getCategoryByIdAction,
+	},
 };

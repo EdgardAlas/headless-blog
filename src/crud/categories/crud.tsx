@@ -1,11 +1,11 @@
 import { CategoryColumns } from '@/crud/categories/_containers/columns';
 import { getCategoriesPaginated } from '@/crud/categories/dao';
-import { crudValidations } from '@/crud/crud-modals';
 import { CrudConfiguration } from '@/types/crud';
+import { categoriesCrudModalInfo } from './modal';
 
 export const categoryCrud: CrudConfiguration = {
 	roles: ['admin', 'user'],
-	crud: crudValidations.categories,
+	crud: categoriesCrudModalInfo,
 	getData: getCategoriesPaginated,
 	columns: CategoryColumns,
 	seo: {

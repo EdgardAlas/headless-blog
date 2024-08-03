@@ -37,4 +37,3 @@ export const DEFAULT_ZOD_HANDLERS: {
 	ZodNativeEnum: 'select',
 	ZodNumber: 'number',
 };
-

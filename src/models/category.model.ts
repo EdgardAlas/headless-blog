@@ -8,7 +8,7 @@ export interface CategoryDocument {
 	createAt: Date;
 }
 
-const CategorySchema = new mongoose.Schema<CategoryDocument>(
+export const Schema = new mongoose.Schema<CategoryDocument>(
 	{
 		name: {
 			type: String,
@@ -23,11 +23,11 @@ const CategorySchema = new mongoose.Schema<CategoryDocument>(
 	}
 );
 
-CategorySchema.plugin(paginate);
+Schema.plugin(paginate);
 
 export const CategoryModel =
 	(mongoose.models.Category as mongoose.PaginateModel<CategoryDocument>) ||
 	mongoose.model<CategoryDocument, mongoose.PaginateModel<CategoryDocument>>(
 		'Category',
-		CategorySchema
+		Schema
 	);

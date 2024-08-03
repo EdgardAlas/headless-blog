@@ -42,16 +42,16 @@ export const CrudActions = ({
 				<EllipsisVertical />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent>
-				{!(noEdit || validations.noEdit) && (
+				{!(noEdit || validations.update.noEdit) && (
 					<DropdownMenuItem
 						onClick={async () => {
-							if (!validations.getAction) {
+							if (!validations.get.getAction) {
 								return;
 							}
 
 							const toastId = toast.loading('Loading...');
 
-							const data = await validations.getAction({
+							const data = await validations.get.getAction({
 								id,
 							});
 
@@ -70,10 +70,10 @@ export const CrudActions = ({
 					</DropdownMenuItem>
 				)}
 
-				{!(noDelete || validations.noDelete) && canBeDeleted && (
+				{!(noDelete || validations.delete.noDelete) && canBeDeleted && (
 					<DropdownMenuItem
 						onClick={async () => {
-							if (!validations.deleteAction) {
+							if (!validations.delete.deleteAction) {
 								return;
 							}
 
@@ -89,7 +89,7 @@ export const CrudActions = ({
 							}
 
 							const toastId = toast.loading('Loading...');
-							const data = await validations.deleteAction({ id });
+							const data = await validations.delete.deleteAction({ id });
 
 							if (data?.serverError) {
 								return toast.error(data?.serverError, { id: toastId });

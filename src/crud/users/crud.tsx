@@ -1,13 +1,13 @@
 import { UsersTableColumns } from '@/crud/users/_containers/columns';
 import { getUsersPaginated } from '@/crud/users/dao';
-import { crudValidations } from '@/crud/crud-modals';
 import { CrudConfiguration } from '@/types/crud';
 import { ImageSizeLimit } from '@components/ui/image-size-limit';
+import { usersModalCrudModalInfo } from './modal';
 
 export const userCrud: CrudConfiguration = {
 	roles: ['admin'],
 	columns: UsersTableColumns,
-	crud: crudValidations.users,
+	crud: usersModalCrudModalInfo,
 	getData: getUsersPaginated,
 	fieldConfig: {
 		password: {
