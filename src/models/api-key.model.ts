@@ -4,9 +4,9 @@ import paginate from 'mongoose-paginate-v2';
 export interface ApiKeyDocument {
 	id: ObjectId;
 	apiKey: string;
-	expiredAt?: Date | string | null;
 	updatedAt: Date;
 	name: string;
+	searchId: string;
 }
 
 export const Schema = new mongoose.Schema<ApiKeyDocument>(
@@ -20,8 +20,8 @@ export const Schema = new mongoose.Schema<ApiKeyDocument>(
 			required: true,
 			unique: true,
 		},
-		expiredAt: {
-			type: Date,
+		searchId: {
+			type: String,
 			required: false,
 		},
 	},

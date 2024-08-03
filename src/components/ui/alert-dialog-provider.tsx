@@ -19,18 +19,23 @@ export const AlertDialogContext = React.createContext<
 >(() => null!);
 
 export type AlertAction =
-	| { type: 'alert'; title: string; body?: string; cancelButton?: string }
+	| {
+			type: 'alert';
+			title: string;
+			body?: React.ReactNode;
+			cancelButton?: string;
+	  }
 	| {
 			type: 'confirm';
 			title: string;
-			body?: string;
+			body?: React.ReactNode;
 			cancelButton?: string;
 			actionButton?: string;
 	  }
 	| {
 			type: 'prompt';
 			title: string;
-			body?: string;
+			body?: React.ReactNode;
 			cancelButton?: string;
 			actionButton?: string;
 			defaultValue?: string;
@@ -44,7 +49,7 @@ export type AlertAction =
 interface AlertDialogState {
 	open: boolean;
 	title: string;
-	body: string;
+	body: React.ReactNode;
 	type: 'alert' | 'confirm' | 'prompt';
 	cancelButton: string;
 	actionButton: string;

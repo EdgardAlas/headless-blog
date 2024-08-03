@@ -282,10 +282,6 @@ function createColumnsFile(
 			header: 'Id',
 			accessorKey: 'id',
 		},
-		{
-			header: 'Last Updated',
-			accessorKey: 'updatedAt',
-		},
 		${fields
 			.map(
 				(field) =>
@@ -296,6 +292,10 @@ function createColumnsFile(
 			)
 			.join(',\n')}
 		,{
+			header: 'Last Updated',
+			accessorKey: 'updatedAt',
+		},
+		{
 			header: '',
 			accessorKey: 'actions',
 			cell: ({ row: { original } }) => {

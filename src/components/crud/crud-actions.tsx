@@ -46,6 +46,7 @@ export const CrudActions = ({
 					<DropdownMenuItem
 						onClick={async () => {
 							if (!validations.get.getAction) {
+								toast.error('There is no way to get the resource');
 								return;
 							}
 
@@ -74,6 +75,7 @@ export const CrudActions = ({
 					<DropdownMenuItem
 						onClick={async () => {
 							if (!validations.delete.deleteAction) {
+								toast.error('No delete action found');
 								return;
 							}
 
