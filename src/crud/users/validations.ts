@@ -25,7 +25,7 @@ export const createUserValidation = z.object({
 			message: 'Invalid role',
 		})
 		.default('user'),
-	image: z.any().optional(),
+	/* image: z.any().optional(), */
 });
 
 export const updateUserValidation = z
@@ -46,7 +46,7 @@ export const updateUserValidation = z
 		}),
 		password: z.string().optional(),
 		id: z.string(),
-		image: z.any().optional(),
+		/* image: z.any().optional(), */
 	})
 	.superRefine((data, cx) => {
 		if (data.password && data.password.length < 8) {

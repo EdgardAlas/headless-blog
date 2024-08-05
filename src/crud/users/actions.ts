@@ -35,7 +35,7 @@ export const createUserAction = authAction
 			blocked: false,
 			role: values.role,
 			email: values.email,
-			image: values.image,
+			/* image: values.image, */
 			name: values.name,
 			password: await hashPassword(values.password),
 		});
@@ -72,7 +72,7 @@ export const updateUserAction = authAction
 		await updateUser(foundUser.id, {
 			role: values.role,
 			email: values.email,
-			image: values.image,
+			/* image: values.image, */
 			name: values.name,
 			password: values.password,
 		});

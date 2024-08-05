@@ -1,9 +1,9 @@
 'use client';
 
 import { CrudActions } from '@components/crud/crud-actions';
-import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar';
+/* import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar'; */
 import { Badge } from '@components/ui/badge';
-import { shortName } from '@helpers/short-name';
+/* import { shortName } from '@helpers/short-name'; */
 import { cn } from '@lib/cn';
 import { ColumnDef } from '@tanstack/react-table';
 
@@ -32,7 +32,7 @@ export const UsersTableColumns: ColumnDef<UserRow>[] = [
 			);
 		},
 	},
-	{
+	/* {
 		header: 'Image',
 		accessorKey: 'image',
 		cell: ({ row: { original } }) => {
@@ -43,7 +43,7 @@ export const UsersTableColumns: ColumnDef<UserRow>[] = [
 				</Avatar>
 			);
 		},
-	},
+	}, */
 	{
 		header: 'Last Updated',
 		accessorKey: 'updatedAt',
