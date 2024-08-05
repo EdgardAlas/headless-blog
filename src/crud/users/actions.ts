@@ -87,8 +87,12 @@ export const deleteUserAction = authAction
 		roles: ['admin'],
 	})
 	.schema(idValidation)
-	.action(async ({ parsedInput: values, ctx: { id } }) => {
+	.action(async ({ parsedInput: values, ctx: { id, role } }) => {
 		const user = await findUserById(values.id);
+
+		if (role === 'super-admin') {
+			throw new CustomError('You cannot delete a super admin');
+		}
 
 		if (!user) {
 			throw new CustomError('User not found');
