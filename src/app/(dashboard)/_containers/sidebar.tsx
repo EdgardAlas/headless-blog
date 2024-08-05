@@ -70,7 +70,10 @@ export const Sidebar = ({ role }: SidebarProps) => {
 
 	const shouldShow = (item: MenuItem) => {
 		return (
-			item.roles.length === 0 || item.roles.includes(role) || role === 'admin'
+			item.roles.length === 0 ||
+			item.roles.includes(role) ||
+			role === 'admin' ||
+			role === 'super-admin'
 		);
 	};
 
@@ -78,7 +81,9 @@ export const Sidebar = ({ role }: SidebarProps) => {
 		return (
 			item.items?.length === 0 ||
 			item.items?.some((subitem) => {
-				if (role === 'admin') return true;
+				if (role === 'admin' || role === 'super-admin') {
+					return true;
+				}
 
 				if (subitem.roles.length === 0 && subitem.items?.length === 0) {
 					return true;

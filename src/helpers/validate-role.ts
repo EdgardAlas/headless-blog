@@ -9,7 +9,7 @@ export const validateRole = async (roles: Role[] = []) => {
 
 	if (
 		!roles.includes(user.role) &&
-		['admin', 'super-admin'].includes(user.role) &&
+		!['admin', 'super-admin'].includes(user.role) &&
 		roles.length > 0
 	)
 		redirect('/');
