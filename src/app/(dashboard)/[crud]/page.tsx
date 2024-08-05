@@ -1,5 +1,5 @@
 import { crudPages } from '@/crud';
-import { CrudValidationKeys } from '@/crud/crud-modals';
+import { CrudValidationKeys } from '@/crud/modals';
 import { validateRole } from '@/helpers/validate-role';
 import { CrudUi } from '@components/crud/crud-ui';
 import { Metadata } from 'next';

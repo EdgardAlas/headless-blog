@@ -5,7 +5,7 @@ import fs from 'fs';
 
 program.option('-m, --model <model>', 'Model name');
 program.option('-r, --remove', 'Remove crud files');
-program.option('-nu, --noupdate', 'Do not update index.ts and crud-modals.ts');
+program.option('-nu, --noupdate', 'Do not update index.ts and modals.ts');
 
 program.parse(process.argv);
 
@@ -91,7 +91,7 @@ import('./models/' + options.model + '.model').then((model) => {
 	createCrudFile(options.model);
 
 	if (!options.noupdate) {
-		// update crud-modals.ts
+		// update modals.tss
 		updateCrudModalsFile();
 
 		// update index.ts
@@ -111,8 +111,8 @@ import('./models/' + options.model + '.model').then((model) => {
 		}
 	);
 
-	console.log('Formatting crud-modals.ts...');
-	execSync('npx prettier --write ./src/crud/crud-modals.ts');
+	console.log('Formatting modals.ts...');
+	execSync('npx prettier --write ./src/crud/modals.ts');
 
 	console.log("formatting 'src/crud/index.tsx'...");
 	execSync('npx prettier --write ./src/crud/index.tsx');
@@ -476,7 +476,7 @@ function createCrudFile(model: string) {
 }
 
 function updateCrudModalsFile() {
-	const crudModalsFile = './src/crud/crud-modals.ts';
+	const crudModalsFile = './src/crud/modals.ts';
 	const crudModalsContent = fs.readFileSync(crudModalsFile, 'utf-8');
 
 	const newImport = `import { ${variableName}CrudModalInfo } from '@/crud/${fileName}/modal';

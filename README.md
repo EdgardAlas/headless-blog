@@ -25,6 +25,6 @@
       - validations.ts: contains the validations for the specific crud
       - crud.ts/tsx: contains the information for the specific page (input configuration, roles, get all data, seo, etc)
     - index.ts: contains the export of every crud file
-    - crud-modal.tsx: contains the export of every modal file for the crud
+    - modals.ts: contains the export of every modal file for the crud
   - generate-crud.ts: contains the script to generate a new crud from the cli (npx tsx ./src/generate-crud.ts -m [model-name]), previously you need to create the model in the models folder manually, and the model should have the mongoose schema exported with the name 'Schema'
   - middleware.ts: contains the middleware for the app
