@@ -25,6 +25,7 @@ export const UsersTableColumns: ColumnDef<UserRow>[] = [
 					className={cn({
 						'bg-blue-500': original.role === 'user',
 						'bg-red-500': original.role === 'admin',
+						"bg-green-500": original.role === 'super-admin',
 					})}
 				>
 					{original.role}
