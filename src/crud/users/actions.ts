@@ -24,7 +24,11 @@ export const createUserAction = authAction
 		roles: ['admin'],
 	})
 	.schema(createUserValidation)
-	.action(async ({ parsedInput: values }) => {
+	.action(async ({ parsedInput: values, ctx: { role } }) => {
+		if (role !== 'super-admin' && values.role === 'super-admin') {
+			throw new CustomError('You cannot create a super-admin');
+		}
+
 		const foundUser = await findUserByEmail(values.email);
 
 		if (foundUser) {
@@ -50,11 +54,15 @@ export const updateUserAction = authAction
 		roles: ['admin'],
 	})
 	.schema(updateUserValidation)
-	.action(async ({ parsedInput: values }) => {
+	.action(async ({ parsedInput: values, ctx: { role } }) => {
 		const foundUser = await findUserByEmail(values.email);
 
 		if (!foundUser) {
 			throw new CustomError('User not found');
+		}
+
+		if (role !== 'super-admin' && values.role === 'super-admin') {
+			throw new CustomError('You cannot update a user to super-admin');
 		}
 
 		if (foundUser.id !== values.id) {
@@ -87,15 +95,15 @@ export const deleteUserAction = authAction
 		roles: ['admin'],
 	})
 	.schema(idValidation)
-	.action(async ({ parsedInput: values, ctx: { id, role } }) => {
+	.action(async ({ parsedInput: values, ctx: { id } }) => {
 		const user = await findUserById(values.id);
-
-		if (role === 'super-admin') {
-			throw new CustomError('You cannot delete a super admin');
-		}
 
 		if (!user) {
 			throw new CustomError('User not found');
+		}
+
+		if (user.role === 'super-admin') {
+			throw new CustomError('You cannot delete a super-admin');
 		}
 
 		if (user.id === id) {

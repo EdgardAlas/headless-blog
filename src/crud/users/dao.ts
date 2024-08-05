@@ -106,7 +106,9 @@ export const mapUserResponseToUserRowArray = async (
 			role: user.role,
 			image: user.image,
 			updatedAt: formatDate(user.updatedAt).format('LLL'),
-			canBeDeleted: loggedUser.id.toString() !== user.id.toString(),
+			canBeDeleted:
+				loggedUser.id.toString() !== user.id.toString() &&
+				user.role !== 'super-admin',
 			blocked: user.blocked,
 		};
 	});
