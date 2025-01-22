@@ -28,3 +28,7 @@
     - modals.ts: contains the export of every modal file for the crud
   - generate-crud.ts: contains the script to generate a new crud from the cli (npx tsx ./src/generate-crud.ts -m [model-name]), previously you need to create the model in the models folder manually, and the model should have the mongoose schema exported with the name 'Schema'
   - middleware.ts: contains the middleware for the app
+
+
+
+ffff
